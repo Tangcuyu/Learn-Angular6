@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>test</title>
+    <meta name="description" content="">
+    <meta name="google" value="notranslate">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body >
+    
+    <script>
+        var book = {};
+
+        var book2 = {
+            _year: {
+                value: 2004
+            }
+        };
+
+        Object.defineProperties(book, {
+            _year: {
+                value:2005,
+                //configurable: true
+            },
+
+            version: {
+                value: 1
+            }
+        });
+
+        var des = Object.getOwnPropertyDescriptor(book, "_year");
+
+        var des2 = Object.getOwnPropertyDescriptor(book2, "_year");
+
+        console.log(des);
+        console.log(des2);
+        console.log(des.value);
+        console.log(des.configurable);
+
+
+        var person = {
+            name: "lijinbin",
+            friends: ["abc", "ec", "ddf"]
+        };
+
+        var anotherperson = Object.create(person, {
+            name: {
+                value: "hhh",
+                configurable: true
+            }
+        });
+
+        console.log(anotherperson.name);
+        console.log(anotherperson);
+
+        var des3 = Object.getOwnPropertyDescriptor(anotherperson, "name");
+
+        console.log(des3.configurable);
+
+
+    </script>
+
+
+</body>
+
+</html>
