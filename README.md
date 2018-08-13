@@ -1,2 +1,2 @@
-# Learn-AngularJS
-AngularJS learning notes
+# Learn-Angular
+Angular learning notes
